@@ -1,3 +1,9 @@
-build:
-  docker:
-    web: Dockerfile
+services:
+  # A Docker web service
+  - type: web
+    name: vmess
+    env: docker
+    repo: https://github.com/jmheqiao/vmonrender.git # optional
+    region: oregon # optional (defaults to oregon)
+    plan: free # optional (defaults to starter)
+    healthCheckPath: /
